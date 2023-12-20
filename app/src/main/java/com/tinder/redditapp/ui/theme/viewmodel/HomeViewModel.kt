@@ -1,9 +1,7 @@
 package com.tinder.redditapp.ui.theme.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tinder.redditapp.data.model.ChildData
 import com.tinder.redditapp.data.repository.PostRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -11,10 +9,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.tinder.redditapp.data.Result
-import com.tinder.redditapp.data.model.Children
-import kotlinx.coroutines.flow.Flow
+import com.tinder.redditapp.data.model.HotPosts
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.flow
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val postRepository: PostRepository) : ViewModel() {
@@ -52,7 +48,7 @@ class HomeViewModel @Inject constructor(private val postRepository: PostReposito
 }
 
 sealed class UIState{
-    data class Success(val posts: List<Children>) : UIState()
+    data class Success(val posts: List<HotPosts>) : UIState()
     data class Error(val errorMessage: String?) : UIState()
     object Loading : UIState()
 }

@@ -1,7 +1,7 @@
 package com.tinder.redditapp
 
 import com.tinder.redditapp.data.model.ChildData
-import com.tinder.redditapp.data.model.Children
+import com.tinder.redditapp.data.model.HotPosts
 import com.tinder.redditapp.data.repository.PostRepository
 import com.tinder.redditapp.ui.theme.viewmodel.HomeViewModel
 import io.mockk.coEvery
@@ -42,7 +42,7 @@ class HomeViewModelTest {
     private val dispatcher = StandardTestDispatcher(scheduler)
     @MockK
     lateinit var repository: PostRepository
-    private val children = listOf(Children("kind", ChildData()))
+    private val children = listOf(HotPosts("kind", ChildData()))
 
     @Before
     fun setUp() {

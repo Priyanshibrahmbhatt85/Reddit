@@ -5,6 +5,6 @@ data class PostData(
     val dist: Int? = null,
     val modhash: String? = null,
     val geoFilter: String? = null,
-    val children: List<Children> = emptyList(),
+    val children: List<HotPosts> = emptyList(),
     val before: String? = null
 )
